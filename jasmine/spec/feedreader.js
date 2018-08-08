@@ -1,10 +1,10 @@
 /* feedreader.js
  *
  * This is the spec file that Jasmine will read and contains
- * all of the tests that will be run against your application.
+ * all of the tests that will be run against the application.
  */
 
-/* We're placing all of our tests within the $() function,
+/* All tests are placed within the $() function,
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
@@ -60,7 +60,7 @@ $(function() {
   });
 
 
-    /* this is a test suite to ensure the menu element is
+    /* This is a test suite to ensure the menu element is
      * hidden by default. */
 
   describe('The menu', function() {
@@ -99,7 +99,7 @@ $(function() {
 
   });
 
-   //Verifies that the feeds are loaded and there are live entries
+   //This verifies that the feeds are loaded and there are live entries
 		 it('completes its work', function(done){
 		 	 const entries = document.querySelector(".feed").getElementsByClassName("entry").length;
 		   expect(entries).toBeGreaterThan(0);
@@ -112,7 +112,7 @@ $(function() {
          */
 
 describe('New Feed Selection', function() {
-  // This adds the first existing entry into an existingFeeds variable and verifies that the code is run asyncronously
+  // This test adds the first existing entry into an existingFeeds variable and verifies that the code is run asyncronously
 
 	  var existingFeeds;
   	beforeEach(function(done){
@@ -124,7 +124,7 @@ describe('New Feed Selection', function() {
   		});
     });
 
-//This confirms that when a new feed is added, it actually updates the list
+//This test confirms that when a new feed is added, it actually updates the list
 
 	  	it('loads a new feed', function() {
 		    	var newFeed = document.querySelector('.feed').getElementsByClassName("entry");
