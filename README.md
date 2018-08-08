@@ -1,6 +1,6 @@
 # Udacity FEND Project 4:  Feed Reader tester
 
-This project tests a pre-existing feed reader application using <a href="https://jasmine.github.io/">Jasmine</a>.
+This project tests a pre-existing RSS feed reader application using <a href="https://jasmine.github.io/">Jasmine</a>.
 
 ## Why this Project?
 
