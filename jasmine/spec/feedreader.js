@@ -29,7 +29,7 @@ $(function() {
          * and that the URL is not empty.
          */
 
-	 	 it('url defined', function() {
+	 	 it('has a url defined', function() {
 		  	for(let feed of allFeeds) {
 				expect(feed.url).toBeDefined();
 			    expect(feed.url.length).not.toBe(0);
@@ -42,7 +42,7 @@ $(function() {
          * and that the name is not empty.
          */
 
-		  it('name defined', function() {
+		  it('has a name defined', function() {
 			  for(let feed of allFeeds) {
 			  	expect(feed.name).toBeDefined();
 			    expect(feed.name.length).not.toBe(0);
@@ -66,7 +66,7 @@ $(function() {
     /* This is a test that ensures the menu changes
      * visibility when the menu icon is clicked. */
 
-		 it('toggles visibility', function(){
+		 it('toggles visibility when clicked', function(){
 				const body = document.querySelector('body');
 				const menu = document.querySelector('.menu-icon-link');
 
@@ -83,7 +83,7 @@ $(function() {
 
 	 describe('Initial Entries', function() {
 
-
+  //BeforeEach and Done are used for asyncronous work
 		 beforeEach(function(done){
 				loadFeed(0, function() {
 					done();
@@ -91,6 +91,7 @@ $(function() {
 
   });
 
+   //Verifies that the feeds are loaded and there are live entries
 		 it('completes its work', function(done){
 		 	 const entries = document.querySelector(".feed").getElementsByClassName("entry").length;
 		   expect(entries).toBeGreaterThan(0);
@@ -103,19 +104,22 @@ $(function() {
          */
 
 describe('New Feed Selection', function() {
+  // This adds the first existing entry into an existingFeeds variable and verifies that the code is run asyncronously
 
 	  var existingFeeds;
   	beforeEach(function(done){
 				loadFeed(0, function() {
-		       let existingFeeds = document.querySelector('.feed').innerHTML;
+		       let existingFeeds = document.querySelector('.feed').getElementsByClassName("entry");
            loadFeed(1, function() {
 					 done();
 				 });
   		});
     });
 
+//This confirms that when a new feed is added, it actually updates the list
+
 	  	it('loads a new feed', function() {
-		    	var newFeed = document.querySelector('.feed').innerHTML;
+		    	var newFeed = document.querySelector('.feed').getElementsByClassName("entry");
 		    	expect(newFeed).not.toBe(existingFeeds);
 	  	});
   	});
