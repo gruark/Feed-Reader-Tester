@@ -8,6 +8,14 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
+
+ /* Some code is based on Matt Cranford's Feedreader walkthrough
+  * (https://matthewcranford.com/), modified to better fit the rubric
+  * and according to my understanding of the project's needs. Research
+  * for the Asyncronous section was completed on Stack Overflow to better
+  * understand BeforeEach/Done functionality*/
+
+
 $(function() {
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
