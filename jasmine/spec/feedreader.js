@@ -80,6 +80,9 @@ $(function() {
 
 			menu.click();
 		   	expect(body.classList.contains('menu-hidden')).toBe(false);
+			
+			menu.click();
+			expect(body.classList.contains('menu-hidden')).toBe(true);
 			});
 
 
